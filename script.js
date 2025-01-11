@@ -14,6 +14,8 @@ function sendMessage(e) {
     let medicalIssue = document.getElementById("medical").value.trim();
     let genderInput = document.querySelector("input[name='gender']:checked");
     let genderValue = genderInput ? genderInput.value : "";
+    let toast = document.getElementById('toast');
+    let closeToastBtn = document.getElementById('close-toast');
 
 
     // Send email
@@ -27,24 +29,33 @@ function sendMessage(e) {
         medical_issue: medicalIssue,
         gender_value: genderValue,
         }).then((response) => {
-            output.innerText = "Sucessfully Sent to Email"
-            output.style.color = 'Green';
-            setTimeout(()=>{
-                output.innerText = " "
-            },2000)
+            toast.innerText="Successfully Sent to Email"
+            toast.style.backgroundColor="green"
+            toast.style.color="white"
+            toast.classList.add('show');
+            // Automatically hide after 3 seconds
+            setTimeout(() => toast.classList.remove('show'), 3000);
             
             form.reset(); // Clear the form
         })
         .catch((error) => {
             console.error('Error sending email:', error);
-            output.innerText = "Error "
-            output.style.color = 'Red';
-            setTimeout(()=>{
-                output.innerText = " "
-            },2000)
+            toast.innerText="Error"
+            toast.style.backgroundColor="red"
+            toast.style.color="white"
+            toast.classList.add('show');
+            // Automatically hide after 3 seconds
+            setTimeout(() => toast.classList.remove('show'), 3000);
         });
         
         
+        
+    
+        // Close the toast manually
+        closeToastBtn.addEventListener('click', () => {
+          toast.classList.remove('show');
+        });
+
     }
     
     // Add event listener to the form
