@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aadi Taekwonda Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+         emailjs.init({
+           publicKey: "Bb7MeN4t1l5_w95_M",
+         });
+      })();
+   </script>
+  </head>
+  <body>
+    <div class="output">
+      <h1 id="output"></h1>
+    </div>
+    <div class="container">
+        <div class="title">Fill The Form For Taekwondo Admission</div>
+      <hr />
+      <form method="" action="" id="contact-form">
+      <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Enter Your Address</span>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Enter Your Address"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Enter Your Phone Number</span>
+            <input
+              type="number"
+              min="10"
+              id="phone"
+              name="phone"
+              placeholder="Enter Your Phone Number"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Enter Your Age</span>
+            <input
+              type="number"
+              name="age"
+              placeholder="Enter Your Age"
+              required
+              id="age"
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Enter Your Blood Group</span>
+            <input
+              type="text"
+              name="blood"
+              placeholder="Enter Your Blood Group"
+              required
+              id="blood-group"
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Enter Your Medical Issue</span>
+            <textarea
+              name="message"
+              placeholder="Enter Here"
+              required
+              id="medical"
+            ></textarea>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="Male" />
+          <input type="radio" name="gender" id="dot-2" value="Female" />
+          <input type="radio" name="gender" id="dot-3" value="Others" />
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Others</span>
+            </label>
+          </div>
+        </div>
+        <button type="submit">Submit <img src="/arrow_icon.png" alt /></button>
+      </form>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>
